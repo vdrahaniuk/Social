@@ -1,0 +1,11 @@
+<? include '/../header.php'; ?>
+<div id="view-content">
+    <div id="Loginpage"/>
+    <h3><? echo $this->title; ?></h3>
+    <p class="err_msg <? echo $this->showErrMessage; ?>"><? echo $this->errMessage; ?></p>
+    <? echo $this->form; ?>
+    <a href="http://myproject/auth/lostpass">Забули пароль?</a> <br>
+    <a href="http://myproject/auth/register">Реєстрація</a>
+</div>
+</div>
+
