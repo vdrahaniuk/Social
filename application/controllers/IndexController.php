@@ -28,5 +28,11 @@ class IndexController extends Zend_Controller_Action
         $this->view->title = 'Р“РѕР»РѕРІРЅР° СЃС‚РѕСЂС–РЅРєР°';
     }
 
+public function durinAction()
+{
+    echo "Коля дурінь";
+}
+
+
 }
 
