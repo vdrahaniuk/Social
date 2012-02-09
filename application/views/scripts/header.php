@@ -11,15 +11,9 @@
             VK.init({
                 apiId: 2782001
             });
-            function authInfo(response) {
-                if (response.session) {
-                    alert('user: '+response.session.mid);
-                } else {
-                    alert('not auth');
-                }
-            }
-            VK.Auth.getLoginStatus(authInfo);
-            VK.UI.button('login_button');
+VK.api("getUserInfo" function(data) { 
+  alert(data.response);
+}); 
         </script>
 
 
