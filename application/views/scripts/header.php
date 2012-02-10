@@ -11,9 +11,23 @@
             VK.init({
                 apiId: 2782001
             });
-VK.api("getUserInfo" function(data) { 
-  alert(data.response);
+            function authInfo(response) {
+                if (response.session) {
+                    alert('user: '+response.session.mid);
+                } else {
+                    alert('not auth');
+                }
+            }
+            VK.Auth.getLoginStatus(authInfo);
+            VK.UI.button('login_button');
+            
+            
+            VK.api("getProfiles", {uids:"1"}, function(data) { 
+                 // Действия с полученными данными
+                 alert(data.response);
 }); 
+            
+            
         </script>
 
 
