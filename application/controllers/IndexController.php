@@ -7,10 +7,7 @@ public function init()
 {
 /* Initialize action controller here */
 }
-public function vadimDuracAction()
-{
-    while (true) echo "vadim durak\n";
-}
+
 public function indexAction()
 {
 $auth = Zend_Auth::getInstance();
@@ -31,10 +28,7 @@ $this->view->headTitle('Соціальні мережі');
 $this->view->title = 'Головна сторінка';
 }
 
-public function durinAction()
-{
-echo "���� �����";
-}
+
 
 
 }
