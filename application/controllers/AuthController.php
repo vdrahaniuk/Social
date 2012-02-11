@@ -222,51 +222,5 @@ class AuthController extends Zend_Controller_Action {
     }
 
 
-
-
-
-/*
-    public function newpassAction() {
-
-        if ($this->activatepassAction()) {
-        
-             //   $password = md5($form->getValue('password'));       
-
-        
-    echo $userename;
-            if ($this->getRequest()->isPost()) {
- 
-                $formData = $this->getRequest()->getPost();
- echo $userename;
-                if ($form->isValid($formData)) {
-  echo $userename;
-                    $password = $form->getValue('password');
-
-                    $database = new Application_Model_DbTable_Users();               
-
-                    $data = array('password' => $password);
-
-
-                    $where = "email like '$userename' and activation_code like '$activation_code'";
-
-                    $database->update($data, $where);
-echo $userename;
-                    $this->view->msg = "ваш аккаунт активовано зараз ви бдуете переадресовані на головну сторінку";
-
-
-
-
-
-                } else {
-
-                    $this->view->errMessage = "Деякі поля пусті або невірно заповнені";
-                    $this->view->showErrMessage = "showError";
-                       }
-                }
-              
-            
-         }
-        }
-*/
 }
 
