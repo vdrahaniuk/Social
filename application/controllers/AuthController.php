@@ -39,7 +39,7 @@ class AuthController extends Zend_Controller_Action {
                 $database = new Application_Model_DbTable_Users();
 
                 //створюємо ключ
-                $sig = $this->getSig();
+                $sig = md5(uniqid(rand(), true));
 
 
                 //реєструємо
