@@ -13,18 +13,15 @@ class Application_Form_Newpass extends Zend_Form
 
         $password->setLabel('New password:')
                 ->setRequired(true)
-                ->addFilter('StripTags')
                 ->addFilter('StringTrim')
-                ->addValidator('NotEmpty', true, array('messages' => array('isEmpty' => $isEmptyMessage))
-        );
+                ->addValidator('NotEmpty', true, array('messages' => array('isEmpty' => $isEmptyMessage)));
 
         $repassword = new Zend_Form_Element_Password('repassword');
 
         $repassword->setLabel('Повторіть пароль:')
                 ->setRequired(true)
-                ->addFilter('StripTags')
-                ->addFilter('StringTrim')
-                ->addValidator('EqualInputs', true, array('password'));
+                ->addFilter('StringTrim');
+            //    ->addValidator('EqualInputs', true, array('password'));
 
 
         $submit = new Zend_Form_Element_Submit('newpass');
@@ -32,7 +29,7 @@ class Application_Form_Newpass extends Zend_Form
         $submit->setLabel('Зберегти');
 
         $this->addElements(array($password, $repassword, $submit));
-
+        echo $code;
         $this->setMethod('post');
     }
 
