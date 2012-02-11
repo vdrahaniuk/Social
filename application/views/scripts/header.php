@@ -21,11 +21,12 @@
             VK.Auth.getLoginStatus(authInfo);
             VK.UI.button('login_button');
             
-            
-            VK.api("getProfiles", {uids:"1"}, function(data) { 
-                 // Действия с полученными данными
-                 alert(data.response);
-}); 
+            VK.Api.call('getVariable', {key: 1281}, function(r) {
+                if(r.response) {
+                    alert('Привет, ' + r.response);
+                }
+            });
+ 
             
             
         </script>
@@ -44,7 +45,9 @@
                         <div class="avatar">
                             <? if (!$this->avatar): ?>
                                 <img src="images/noavatar.png" alt="Аватар відсутній"/>
-                            <? endif ?>
+                            <? else: ?>
+                                <img height="119px" src="<? echo $this->avatar; ?>" alt="Аватар відсутній"/>  
+                            <? endif; ?>
                         </div>
 
                         <div class="user_discription">

@@ -1,7 +1,62 @@
-<? include '/../header.php';?>
+<? include '/../header.php'; ?>
 <div id="view-content">
-    <h3><? echo $this->title;?></h3>
+    <h3><? echo $this->title; ?></h3>
 
+    <table>
+        <? foreach ($this->vkWall as $key => $value): ?>
+            <tr>
+                <td class="wall">
+                    <table width="100%">
+                        
+                        <? if (isset($value['text'])): ?>
+                        <!--Просто текст повідомлення-->
+                        <tr>
+                            <td>              
+                                <? echo $value['text']; ?>
+                            </td>
+                        </tr>
+                        <? endif; ?>
+                        <!--Якщо в записі є графіті то виводимо їх-->
+                        <? if (isset($value['attachments'][0]['graffiti']['src'])): ?>
+                            <tr>
+                                <td class="wallGraffiti">              
+                                    <img src="<? echo($value['attachments'][0]['graffiti']['src']); ?>"/>
+                                </td>
+                            </tr>
+                        <? endif; ?>
 
+                        
+                        
+                        <? if (isset($value['attachments'][0]['posted_photo'])): ?>
+                            <!--Вивід фотографій-->
+                        <tr>
+
+                            <td>              
+                                <img src="<? echo($value['attachments'][0]['posted_photo']['src']); ?>"/>
+                            </td>
+                        </tr>
+                        <? endif; ?>
+                        
+                         <? if (isset($value['attachments'][0]['photo'])): ?>
+                        <tr>
+                            <!--Вивід фотографій-->
+                            <td>              
+                                <img src="<? echo($value['attachments'][0]['photo']['src']); ?>"/>
+                            </td>
+                        </tr>
+                        <? endif; ?>
+                        <tr class="wallInfo" >
+
+                            <td style="text-align: left;">Дата публыкації:
+                                <? echo date('d-m-y H:m:s', $value['date']); ?>
+                            </td>
+
+                            <td style="text-align: right;">Сподобалась: <? echo($value['likes']['count']); ?></td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        <? endforeach; ?>
+    </table>
 </div>
-<? include '/../footer.php';?>
+<? include '/../footer.php'; ?>
